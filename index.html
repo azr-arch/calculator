@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="primary">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>Frontend Mentor | Calculator app</title>
+    <script src="tailwind.config.js"></script>
+  </head>
+  <body class="bg-main min-h-screen flex items-center justify-center">
+    <main
+      class="select-none flex flex-col gap-4 w-11/12 max-w-11/12 md:w-96 md:max-w-96 lg:w-[500px] lg:max-w-[500px]"
+    >
+      <div
+        id="theme-toggle"
+        class="self-end p-2 cursor-pointer bg-toggle bg-opacity-25 backdrop-blur-3xl rounded-md shadow-sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-arrows-exchange"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="var(--text-screen)"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M7 10h14l-4 -4"></path>
+          <path d="M17 14h-14l4 4"></path>
+        </svg>
+      </div>
+
+      <div
+        class="shadow-lg bg-screen p-6 lg:p-8 rounded-lg flex justify-end flex-col items-end gap-1"
+      >
+        <div
+          id="previous-value"
+          class="text-textScreenPrevious text-sm lg:text-md"
+        ></div>
+        <div
+          id="current-value"
+          class="break-words break-all text-textScreen text-4xl lg:text-5xl"
+        >
+          0
+        </div>
+      </div>
+
+      <div
+        class="bg-keypad p-6 lg:p-8 grid grid-cols-4 gap-3 lg:gap-5 rounded-lg keypad"
+      >
+        <button
+          id="numbers"
+          data-value="7"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-0 bg-keyNumsBg text-text rounded-lg"
+        >
+          7
+        </button>
+        <button
+          id="numbers"
+          data-value="8"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:py-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          8
+        </button>
+        <button
+          id="numbers"
+          data-value="9"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:py-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          9
+        </button>
+        <button
+          id="operations"
+          data-value="del"
+          class="text-xl transition-colors duration-150 ease-linear hover:bg-keyDelHover shadow-key shadow-keyDelShadow lg:text-2xl col-span-1 p-4 lg:p-3 bg-keyDel text-textWhite rounded-lg"
+        >
+          DEL
+        </button>
+        <button
+          id="numbers"
+          data-value="4"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          4
+        </button>
+        <button
+          id="numbers"
+          data-value="5"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          5
+        </button>
+        <button
+          id="numbers"
+          data-value="6"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          6
+        </button>
+        <button
+          id="operations"
+          data-value="+"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          +
+        </button>
+        <button
+          id="numbers"
+          data-value="1"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          1
+        </button>
+        <button
+          id="numbers"
+          data-value="2"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          2
+        </button>
+        <button
+          id="numbers"
+          data-value="3"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          3
+        </button>
+        <button
+          id="operations"
+          data-value="-"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          -
+        </button>
+        <button
+          id="decimal"
+          data-value="."
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          .
+        </button>
+        <button
+          id="numbers"
+          data-value="0"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          0
+        </button>
+        <button
+          id="operations"
+          data-value="/"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          /
+        </button>
+        <button
+          id="operations"
+          data-value="*"
+          class="text-3xl hover:bg-keyNumsHover transition-colors duration-150 ease-linear shadow-key shadow-keyNumsShadow lg:text-4xl col-span-1 p-4 lg:p-3 bg-keyNumsBg text-text rounded-lg"
+        >
+          x
+        </button>
+        <button
+          id="operations"
+          data-value="reset"
+          class="text-xl transition-colors duration-150 ease-linear hover:bg-keyDelHover shadow-key shadow-keyDelShadow col-span-2 px-6 py-4 bg-keyDel text-textWhite rounded-lg"
+        >
+          RESET
+        </button>
+
+        <button
+          id="operations"
+          data-value="="
+          class="col-span-2 transition-colors duration-150 ease-linear hover:bg-keyDarkShadow shadow-key shadow-keyDarkShadow bg-keyDark rounded-lg text-keyDarkText"
+        >
+          =
+        </button>
+      </div>
+    </main>
+    <script defer src="script.js"></script>
+  </body>
+</html>
