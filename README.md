@@ -8,7 +8,7 @@ This is a responsive calculator web application built using HTML, Tailwind CSS, 
 
 ## Live Demo
 
-You can view a live demo of the calculator [here ↗]([https://example.com](https://calculator-azr-arch.vercel.app/)).
+You can view a live demo of the calculator [HERE]([https://example.com](https://calculator-azr-arch.vercel.app/)).
 
 ## Features
 
